@@ -4,7 +4,7 @@
 1. **Install [Node 8](https://nodejs.org)** or newer. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)(https://github.com/coryhouse/-redux-starter/archive/master.zip)
 2. **Navigate to this project's root directory on the command line.**
 3. **Install Node Packages.** - `npm install`
-3. **Run npm script** - `npm start`
+3. **Run npm script** - `npm run start`
 4. **(optional) Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome.
 5. Having issues? See below.
 
