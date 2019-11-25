@@ -36,10 +36,3 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-
-.list-group::-webkit-scrollbar-thumb
-{
-  border-radius: 10px;
-	width: 12px;
-	background-color: #F5F5F5;
-}
