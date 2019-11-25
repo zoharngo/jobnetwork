@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron } from "react-bootstrap";
 const MatchesPage = () => (
-    <div className="p-1">
+    <div className="p-4">
         <Jumbotron>
             <h3>Matches Page</h3>
             <ul>

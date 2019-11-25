@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Spinner } from "../common/";
+import Job from "./Job";
 import PropTypes from "prop-types";
 
 class JobList extends Component {
@@ -13,7 +14,9 @@ class JobList extends Component {
                         <Spinner className="align-middle" />
                     ) : (<ListGroup>{
                         this.props.jobs.map(job => {
-                            return (<ListGroupItem key={job.jobId}>{job.title}</ListGroupItem>)
+                            return (<ListGroupItem key={job.jobId}>
+                                <Job job={job} />
+                            </ListGroupItem>)
                         })
                     }
                     </ListGroup>)

@@ -5,7 +5,7 @@ import SearchPage from "./search/SearchPage";
 import { Menu, Header } from "./common";
 import PageNotFound from "./PageNotFound";
 import MatchesPage from "./matches/MatchesPage";
-import { Container, Jumbotron } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 // /#e9ecef
 function App() {
   return (

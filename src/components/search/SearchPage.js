@@ -5,7 +5,6 @@ import SearchBar from "./SearchBar";
 import JobList from "./JobList";
 import { getJobsTitles } from "../../api/jobsApi";
 import { toast } from "react-toastify";
-import { Spinner } from "../common/";
 import PropTypes from "prop-types";
 
 class SearchPage extends Component {
