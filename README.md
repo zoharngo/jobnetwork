@@ -5,7 +5,7 @@
 2. **Navigate to this project's root directory on the command line.**
 3. **Install Node Packages.** - `npm install`
 3. **Run npm script** - `npm run start`
-4. **Hit the URL at http://localhost:3000/ **
+4. **Hit the URL at** - [http://localhost:3000/](http://localhost:3000/)
 5. **(optional) Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome.
 5. Having issues? See below.
 
