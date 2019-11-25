@@ -1,4 +1,3 @@
-# Starter Kit for [Building Applications in React and Redux](http://www..com/author/cory-house) 
 
 ## Get Started
 
