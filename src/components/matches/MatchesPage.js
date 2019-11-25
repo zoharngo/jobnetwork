@@ -1,9 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Jumbotron } from "react-bootstrap";
+const MatchesPage = () => (
+    <div className="p-1">
+        <Jumbotron>
+            <h3>Matches Page</h3>
+            <ul>
+                <li>Senior Personal Assitanant</li>
+                <li>Capital Logen For Personal Assitanant</li>
+                <li>Senior Programmer</li>
+                <li>Junior Programmer</li>
+            </ul>
+            <Link to="about" className="btn btn-primary btn-lg">
+                Learn more
+            </Link>
+        </Jumbotron>
+    </div>
 
-class MatchesPage extends React.Component {
-    render() {
-        return <h2>MatchesPage</h2>;
-    }
-}
+);
 
 export default MatchesPage;
