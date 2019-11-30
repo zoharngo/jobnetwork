@@ -6,6 +6,9 @@ import { Menu, Header } from "./common";
 import PageNotFound from "./PageNotFound";
 import MatchesPage from "./matches/MatchesPage";
 import { Container } from "react-bootstrap";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // /#e9ecef
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
           <Route path="/matches" component={MatchesPage} />
           <Route component={PageNotFound} />
         </Switch>
+        <ToastContainer autoClose={3000} hideProgressBar />
     </Container>
   );
 }

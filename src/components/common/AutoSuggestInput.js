@@ -44,7 +44,15 @@ class AutoSuggestInput extends Component {
         }
 
         const regex = new RegExp('^' + escapedValue, 'i');
-        const suggestions = this.props.jobsTitle.filter(title => regex.test(title.jobTitleText));
+        const suggestions = this.props.jobsTitle.filter(title => {
+            const words = title.jobTitleText.split(' ');
+
+            for (const w of words) {
+                if (regex.test(w))
+                    return true;
+            }
+            return false;
+        });
         return suggestions;
     };
 

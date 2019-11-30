@@ -10,11 +10,9 @@ import PropTypes from "prop-types";
 class SearchPage extends Component {
 
   componentDidMount() {
-    try {
-      getJobsTitles();
-    } catch (error) {
-      toast.error("Failed to load. " + error.message, { autoClose: false });
-    }
+    getJobsTitles().catch(() => {
+      toast.error("Sorry something went wrong please try later..", { autoClose: false });
+    });
   }
 
   render() {
