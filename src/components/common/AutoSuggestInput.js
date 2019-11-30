@@ -42,8 +42,8 @@ class AutoSuggestInput extends Component {
         }
 
         const regex = new RegExp('^' + escapedValue, 'i');
-
-        return this.props.jobsTitle.filter(title => regex.test(title.JobTitleText));
+        const suggestions = this.props.jobsTitle.filter(title => regex.test(title.jobTitleText));
+        return suggestions;
     };
 
     render() {
@@ -59,7 +59,7 @@ class AutoSuggestInput extends Component {
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                getSuggestionValue={suggestion => suggestion.JobTitleText}
+                getSuggestionValue={suggestion => suggestion.jobTitleText}
                 renderSuggestion={renderSuggestion}
                 inputProps={inputProps}
             />
@@ -85,8 +85,8 @@ function escapeRegexCharacters(str) {
 }
 
 function renderSuggestion(suggestion, { query }) {
-    const matches = AutosuggestHighlightMatch(suggestion.JobTitleText, query);
-    const parts = AutosuggestHighlightParse(suggestion.JobTitleText, matches);
+    const matches = AutosuggestHighlightMatch(suggestion.jobTitleText, query);
+    const parts = AutosuggestHighlightParse(suggestion.jobTitleText, matches);
 
     return (
         <span>

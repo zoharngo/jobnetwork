@@ -3,12 +3,12 @@ import { showSearchResultsAction, loadJobsTitlesAction } from "../redux/actions/
 import { beginApiCall, apiCallError } from "../redux/actions/apiStatusActions";
 import store from "../redux/configureStore";
 
-const baseUrl = process.env.API_URL;
+const baseUrl = process.env.API_URL + '/api';
 const top = 100;
 
 export function searchJobs(jobTitle = 'default') {
     store.dispatch(beginApiCall());
-    return fetch(`${baseUrl}/jobs/?jobTitle=${encodeURIComponent(jobTitle)}&limit=${top}`)
+    return fetch(`${baseUrl}/jobs/?q=${encodeURIComponent(jobTitle)}&top=${top}`)
         .then(async res => {
             const jobs = await handleResponse(res);
             store.dispatch(showSearchResultsAction(jobs));
@@ -22,7 +22,7 @@ export function searchJobs(jobTitle = 'default') {
 
 export function getJobsTitles() {
     store.dispatch(beginApiCall());
-    return fetch(`${baseUrl}/jobsTitle`)
+    return fetch(`${baseUrl}/jobTitles`)
         .then(async res => {
             const jobsTitles = await handleResponse(res);
             store.dispatch(loadJobsTitlesAction(jobsTitles));
