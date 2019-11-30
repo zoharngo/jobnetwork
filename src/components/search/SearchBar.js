@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toast } from "react-toastify";
 import { searchJobs } from "../../api/jobsApi";
-import { showSearchResultsAction } from "../../redux/actions/jobActions";
 import { AutoSuggestInput } from "../common/";
+import PropTypes from "prop-types";
 
 class SearchBar extends Component {
 
-    state = {
-        searchInput: "",
-    };
-
     invokeSearch = () => {
-        const { searchInput } = this.state;
+        const { textSearch } = this.props;
         try {
-            searchJobs(searchInput);
+            searchJobs(textSearch);
         } catch (error) {
             toast.error("Search failed. " + error.message, { autoClose: false });
         }
@@ -37,19 +33,16 @@ class SearchBar extends Component {
 }
 
 export default connect(
-    mapStateToProps, mapDispatchToProps
+    mapStateToProps, null
 )(SearchBar);
+
+SearchBar.propTypes = {
+    textSearch: PropTypes.string.isRequired
+};
 
 function mapStateToProps(state) {
     return {
-        ...state
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: {
-            showSearchResultsAction: jobs => dispatch(showSearchResultsAction(jobs))
-        }
+        ...state,
+        textSearch: state.jobs.textSearch,
     };
 }

@@ -9,7 +9,7 @@ const Menu = () => {
                 activeKey="/search"
             >
                 <Nav.Item>
-                    <Nav.Link href="/" className="text-dark" >
+                    <Nav.Link href="/" className="text-dark">
                         <i className="fa fa-home fa-2x"></i>
                         <br></br>
                         <span>Jobs</span>

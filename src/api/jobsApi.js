@@ -8,7 +8,7 @@ const top = 100;
 
 export function searchJobs(jobTitle = 'default') {
     store.dispatch(beginApiCall());
-    return fetch(`${baseUrl}/jobs/?q=${encodeURIComponent(jobTitle)}&top=${top}`)
+    return fetch(`${baseUrl}/jobs/search?q=${encodeURIComponent(jobTitle)}&top=${top}`)
         .then(async res => {
             const jobs = await handleResponse(res);
             store.dispatch(showSearchResultsAction(jobs));

@@ -1,5 +1,5 @@
 import initialState from "../initialState";
-import { SEARCH_JOBS_SUCCESS, GET_JOBS_TITLE_SUCCESS } from "../actions/actionTypes";
+import { SEARCH_JOBS_SUCCESS, GET_JOBS_TITLE_SUCCESS, SAVE_TEXT_SEARCH } from "../actions/actionTypes";
 
 
 export default function jobsReducer(state = initialState.jobs, action) {
@@ -14,6 +14,11 @@ export default function jobsReducer(state = initialState.jobs, action) {
             return {
                 ...state,
                 jobsTitle: action.jobsTitle
+            }
+        case SAVE_TEXT_SEARCH:
+            return {
+                ...state,
+                textSearch: action.textSearch
             }
 
         default:

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Autosuggest from 'react-autosuggest';
 import AutosuggestHighlightMatch from 'autosuggest-highlight/match';
 import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
+import { saveTextSearchAction } from "../../redux/actions/jobActions";
 import "./AutoSuggestInput.css";
 
 class AutoSuggestInput extends Component {
@@ -17,6 +18,7 @@ class AutoSuggestInput extends Component {
     }
 
     onChange = (event, { newValue }) => {
+        this.props.actions.saveTextSearchAction(newValue);
         this.setState({
             value: newValue
         });
@@ -67,7 +69,15 @@ class AutoSuggestInput extends Component {
     }
 }
 
-export default connect(mapStateToProps, null)(AutoSuggestInput);
+export default connect(mapStateToProps, mapDispatchToProps)(AutoSuggestInput);
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: {
+            saveTextSearchAction: textSearch => dispatch(saveTextSearchAction(textSearch))
+        }
+    };
+}
 
 function mapStateToProps(state) {
     return {
@@ -77,6 +87,7 @@ function mapStateToProps(state) {
 }
 
 AutoSuggestInput.propTypes = {
+    actions: PropTypes.object.isRequired,
     jobsTitle: PropTypes.array.isRequired
 };
 
